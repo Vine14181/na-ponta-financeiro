@@ -1,0 +1,14 @@
+# Na Ponta - Controle Financeiro
+# Dependências FIXADAS nas versões testadas (reprodutibilidade — NIST SSDF PW.4).
+# Para atualizar com segurança: mude a versão aqui, teste, e faça commit.
+
+customtkinter==6.0.0
+gspread==6.2.1
+google-auth==2.56.0
+pandas==3.0.3
+matplotlib==3.11.0
+cryptography==49.0.0
+Pillow==12.3.0
+anthropic==0.117.0
+requests==2.34.2
+fpdf2==2.8.7

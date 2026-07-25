@@ -1,0 +1,20 @@
+# Na Ponta — nunca versionar segredos ou dados pessoais
+.env
+credentials.json
+data/
+*.enc
+*.key
+.master.key
+
+# Ambiente Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Ícones/artefatos gerados
+*.spec
+build/
+dist/
+
+desktop.ini
