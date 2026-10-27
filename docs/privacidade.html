@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Na Ponta: política de privacidade</title>
+<style>
+  :root { --bg: #f6f6f3; --ink: #1d1f22; --ink-2: #4b5058; --line: #d9dbd6; --accent: #8a5a00; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #16181b; --ink: #ecedee; --ink-2: #a9adb3; --line: #2e3237; --accent: #f2c178; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 2em 0 .4em; }
+  p, li { color: var(--ink-2); }
+  strong { color: var(--ink); }
+  .data { color: var(--ink-2); font-size: .95rem; margin: 0 0 1.5em; }
+  .box { border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin: 1.2em 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; border-top: 1px solid var(--line); padding: 10px 8px; }
+  th { color: var(--ink); }
+  .scroll { overflow-x: auto; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+<h1>Na Ponta: política de privacidade</h1>
+<p class="data">Aplicativo Na Ponta para Android. Última atualização: 27 de outubro de 2026.</p>
+
+<div class="box">
+  <p><strong>Resumo:</strong> o Na Ponta guarda seus lançamentos <strong>só no seu celular</strong>. O desenvolvedor não tem servidor, não recebe seus dados e não usa anúncios, análise de uso nem rastreamento. Seus dados só saem do aparelho quando você liga, com as suas próprias chaves, um serviço opcional (assistentes de IA, Pierre ou a sua planilha do Google), e vão direto do celular para esse serviço.</p>
+</div>
+
+<h2>1. Quem é o responsável</h2>
+<p>Vinicius Vaz, desenvolvedor do app. Contato: <a href="mailto:viniciusgabriel109@gmail.com">viniciusgabriel109@gmail.com</a>.</p>
+
+<h2>2. O que fica no seu celular</h2>
+<ul>
+  <li>As transações que você lança ou importa (data, valor, categoria, descrição, forma de pagamento, status e observações).</li>
+  <li>As conversas com os assistentes e o que você ensina ao Técnico (regras de categoria, recorrências e fatos).</li>
+  <li>Suas preferências (tema, ocultar valores).</li>
+  <li>As chaves de API que você cadastra, guardadas criptografadas (AES-256) com uma chave presa ao Android Keystore do aparelho. O app nunca mostra a chave de volta.</li>
+</ul>
+<p>Tudo fica na área privada do app, que outros apps não conseguem ler. O desenvolvedor não tem acesso a nada disso.</p>
+
+<h2>3. Quando algum dado sai do celular</h2>
+<p>Só nos casos abaixo, todos opcionais e ligados por você. A conexão é sempre criptografada (HTTPS), e o app só se comunica com os endereços desses serviços. Cada chave vai somente para o serviço dela.</p>
+<div class="scroll">
+<table>
+  <tr><th>Serviço</th><th>Quando</th><th>O que é enviado</th></tr>
+  <tr><td>Google Gemini API ou Anthropic Claude API</td><td>Quando você conversa com um assistente, usando a chave que você cadastrou</td><td>Sua pergunta, o histórico recente da conversa e um resumo dos seus dados financeiros (totais do mês, categorias, lançamentos recentes e, se o Pierre estiver ligado, saldos e faturas)</td></tr>
+  <tr><td>Pierre Finance (Open Finance)</td><td>Quando você cadastra a chave do Pierre</td><td>Só a sua chave, para buscar saldos e transações das contas que você conectou no Pierre</td></tr>
+  <tr><td>Google Apps Script (sua planilha)</td><td>Se você conectar a sua própria planilha, na seção opcional "Planilha do Google"</td><td>Suas transações, para mantê-las iguais no celular e na planilha</td></tr>
+</table>
+</div>
+<p>Esses serviços tratam os dados conforme as políticas deles: <a href="https://ai.google.dev/gemini-api/terms">termos da Gemini API</a>, <a href="https://www.anthropic.com/legal/privacy">política da Anthropic</a> e <a href="https://www.pierre.finance">Pierre</a>. Se você não cadastrar nenhuma chave, nenhum dado sai do celular.</p>
+
+<h2>4. Backup</h2>
+<ul>
+  <li><strong>Backup automático do Android:</strong> se estiver ligado no seu celular, o Android guarda uma cópia dos dados do app na sua Conta Google, <strong>apenas</strong> quando ela pode ser criptografada com o bloqueio de tela do aparelho. As chaves de API nunca entram nesse backup.</li>
+  <li><strong>Backup manual:</strong> em Configurações → Seus dados, você pode salvar um arquivo com seus dados onde quiser. Ele não inclui as chaves de API. Guarde-o em lugar seguro, porque contém seus dados financeiros.</li>
+</ul>
+
+<h2>5. O que o app não faz</h2>
+<ul>
+  <li>Não tem anúncios.</li>
+  <li>Não usa ferramentas de análise, telemetria nem rastreamento.</li>
+  <li>Não vende, aluga nem compartilha dados com terceiros, além dos serviços que você mesmo ligar (item 3).</li>
+  <li>Não pede acesso a contatos, localização, câmera, microfone ou arquivos. A única permissão é a de internet.</li>
+</ul>
+
+<h2>6. Apagar seus dados</h2>
+<p>Em Configurações → Seus dados → "Apagar dados", tudo o que está no celular é apagado. Desinstalar o app também apaga (o Android pode perguntar se você quer manter os dados). Cópias que você exportou ou que estão no backup da sua Conta Google ficam sob seu controle: apague por lá. Para dados enviados aos serviços do item 3, use os canais de cada serviço.</p>
+
+<h2>7. Seus direitos (LGPD)</h2>
+<p>A Lei Geral de Proteção de Dados (Lei 13.709/2018) garante seus direitos sobre seus dados pessoais. Como o desenvolvedor não coleta nem guarda seus dados, você os exerce direto no app: ver, corrigir, exportar e apagar. Dúvidas: <a href="mailto:viniciusgabriel109@gmail.com">viniciusgabriel109@gmail.com</a>.</p>
+
+<h2>8. Público</h2>
+<p>O app é destinado a maiores de 18 anos e não coleta dados de crianças de propósito.</p>
+
+<h2>9. Mudanças nesta política</h2>
+<p>Se esta política mudar, a nova versão será publicada nesta página com a data atualizada. Mudanças importantes também serão avisadas no app.</p>
+</main>
+</body>
+</html>
