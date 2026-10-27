@@ -6,6 +6,12 @@ data/
 *.key
 .master.key
 
+# App Android: keystore de assinatura e pacotes gerados (os zips levam a keystore)
+*.jks
+*.keystore
+*.apk
+*.zip
+
 # Ambiente Python
 venv/
 __pycache__/
